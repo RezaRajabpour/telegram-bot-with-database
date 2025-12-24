@@ -8,7 +8,7 @@ db_conn = None
 def init_db():
     global db_conn
     if db_conn is None:
-        db_conn = sqlite3.connect('bot_data.db', check_same_thread=False)
+        db_conn = sqlite3.connect('DATABASE NAME.db', check_same_thread=False)
         db_conn.row_factory = sqlite3.Row
         cursor = db_conn.cursor()
         cursor.execute('''
@@ -65,7 +65,7 @@ async def text_response(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 def start_bot():
     init_db()
-    bot = Application.builder().token("8208856815:AAFF2xeo57cNQL1quT9mtTSEImP3pawLpzs").build()
+    bot = Application.builder().token("TOKEN").build()
     
     bot.add_handler(CommandHandler("start", cmd_start))
     bot.add_handler(CommandHandler("help", cmd_help))
