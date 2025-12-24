@@ -8,7 +8,7 @@ db_conn = None
 def init_db():
     global db_conn
     if db_conn is None:
-        db_conn = sqlite3.connect('DATABASE NAME.db', check_same_thread=False)
+        db_conn = sqlite3.connect('DATABASE NAME', check_same_thread=False)
         db_conn.row_factory = sqlite3.Row
         cursor = db_conn.cursor()
         cursor.execute('''
